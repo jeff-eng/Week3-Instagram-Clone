@@ -11,6 +11,7 @@ import UIKit
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate /*Setup*/ { // need to create a Protocol.swift file with a protocol named Setup
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var addButtonSelected: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +28,27 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func setUpAppearance() {
-        // self.imageView.layer.cornerRadius = 3.0
+         self.imageView.layer.cornerRadius = 3.0
     }
     
     lazy var imagePicker = UIImagePickerController()
     
-    
+    func presentActionSheet() {
+        let actionSheet = UIAlertController(title: "Source", message: "Please select the source type", preferredStyle: .ActionSheet)
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) in
+            self.presentImagePicker(.Camera)
+        }
+        
+        let photosAction = UIAlertAction(title: "Photos", style: .Default) { (action) in
+            self.presentImagePicker(.PhotoLibrary)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        actionSheet.addAction(cameraAction)
+        actionSheet.addAction(photosAction)
+        actionSheet.addAction(cancelAction)
+    }
 }
 

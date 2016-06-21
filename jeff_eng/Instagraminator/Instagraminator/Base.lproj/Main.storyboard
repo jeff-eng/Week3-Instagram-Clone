@@ -42,6 +42,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ny0-1g-WGy"/>
                     <connections>
+                        <outlet property="addButtonSelected" destination="1Kf-kr-L3q" id="bXz-Tx-tpx"/>
                         <outlet property="imageView" destination="zlk-sk-kSi" id="zta-PJ-PDl"/>
                     </connections>
                 </viewController>
