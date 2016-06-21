@@ -27,6 +27,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4DV-kU-kBY"/>
                                     <barButtonItem systemItem="add" id="1Kf-kr-L3q">
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="addButtonSelected:" destination="BYZ-38-t0r" id="1Li-xO-Fvn"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UXV-ay-cuG"/>
                                 </items>

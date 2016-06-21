@@ -11,11 +11,13 @@ import UIKit
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate /*Setup*/ { // need to create a Protocol.swift file with a protocol named Setup
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var addButtonSelected: UIBarButtonItem!
+    
+    lazy var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.setup()
+        self.setUpAppearance()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +32,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     func setUpAppearance() {
          self.imageView.layer.cornerRadius = 3.0
     }
-    
-    lazy var imagePicker = UIImagePickerController()
     
     func presentActionSheet() {
         let actionSheet = UIAlertController(title: "Source", message: "Please select the source type", preferredStyle: .ActionSheet)
@@ -49,6 +49,46 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         actionSheet.addAction(cameraAction)
         actionSheet.addAction(photosAction)
         actionSheet.addAction(cancelAction)
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
+    
+    func presentImagePicker(sourceType: UIImagePickerControllerSourceType) {
+        self.imagePicker.delegate = self
+        self.imagePicker.sourceType = sourceType
+        self.presentViewController(self.imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func addButtonSelected(sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            self.presentActionSheet()
+        }
+        
+        else {
+            self.presentImagePicker(.PhotoLibrary)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
