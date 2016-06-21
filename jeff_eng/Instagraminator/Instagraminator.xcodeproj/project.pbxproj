@@ -13,6 +13,7 @@
 		955728731D18A28000ED8692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 955728721D18A28000ED8692 /* Assets.xcassets */; };
 		955728761D18A28000ED8692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 955728741D18A28000ED8692 /* LaunchScreen.storyboard */; };
 		9557289F1D19B72B00ED8692 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557289E1D19B72B00ED8692 /* Post.swift */; };
+		955728A41D1A035400ED8692 /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955728A31D1A035400ED8692 /* Setup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		955728751D18A28000ED8692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		955728771D18A28000ED8692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9557289E1D19B72B00ED8692 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		955728A31D1A035400ED8692 /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		9557285F1D18A27F00ED8692 = {
 			isa = PBXGroup;
 			children = (
+				955728A51D1A036F00ED8692 /* Protocol */,
 				955728A01D19B73700ED8692 /* Model */,
 				9557286A1D18A27F00ED8692 /* Instagraminator */,
 				955728691D18A27F00ED8692 /* Products */,
@@ -97,6 +100,14 @@
 				9557289E1D19B72B00ED8692 /* Post.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		955728A51D1A036F00ED8692 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				955728A31D1A035400ED8692 /* Setup.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +184,7 @@
 				9557289F1D19B72B00ED8692 /* Post.swift in Sources */,
 				9557286E1D18A28000ED8692 /* ImageViewController.swift in Sources */,
 				9557286C1D18A27F00ED8692 /* AppDelegate.swift in Sources */,
+				955728A41D1A035400ED8692 /* Setup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +336,7 @@
 				9557287C1D18A28000ED8692 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
