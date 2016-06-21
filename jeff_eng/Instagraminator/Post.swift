@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jeffrey Eng. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Post {
     
