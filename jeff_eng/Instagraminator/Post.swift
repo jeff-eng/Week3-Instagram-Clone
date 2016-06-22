@@ -8,12 +8,12 @@
 
 import UIKit
 
-//class Post {
-//    
-//    let image : UIImage
-//    
-//    init(image: UIImage)
-//    {
-//        self.image = image
-//    }
-//}
+class Post {
+    
+    let image : UIImage
+    
+    init(image: UIImage)
+    {
+        self.image = image
+    }
+}
