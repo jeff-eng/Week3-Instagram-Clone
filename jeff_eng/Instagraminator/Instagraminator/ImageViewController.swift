@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate /*Setup*/ { // need to create a Protocol.swift file with a protocol named Setup
-
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, Setup {
+    
     @IBOutlet weak var imageView: UIImageView!
     
     lazy var imagePicker = UIImagePickerController()
@@ -17,7 +17,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        self.setUpAppearance()
+        self.setupAppearance()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +29,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.navigationItem.title = "Instagraminator"
     }
     
-    func setUpAppearance() {
+    func setupAppearance() {
          self.imageView.layer.cornerRadius = 3.0
     }
     
@@ -67,6 +67,13 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         else {
             self.presentImagePicker(.PhotoLibrary)
         }
+    }
+    
+    //MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.imageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
