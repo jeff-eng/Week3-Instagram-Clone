@@ -28,6 +28,11 @@
                                     <constraint firstAttribute="height" constant="44" id="nXm-LW-DAt"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem systemItem="edit" id="hbO-po-BKF">
+                                        <connections>
+                                            <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="usa-Fb-Pe3"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="4DV-kU-kBY"/>
                                     <barButtonItem systemItem="add" id="1Kf-kr-L3q">
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -36,6 +41,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="UXV-ay-cuG"/>
+                                    <barButtonItem title="Save" id="9Zp-UU-l3Z">
+                                        <connections>
+                                            <action selector="saveButtonSelected:" destination="BYZ-38-t0r" id="riT-3y-k1f"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>

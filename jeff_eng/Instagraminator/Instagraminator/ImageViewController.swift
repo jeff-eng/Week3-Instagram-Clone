@@ -68,6 +68,26 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.presentImagePicker(.PhotoLibrary)
         }
     }
+    @IBAction func editButtonSelected(sender: AnyObject) {
+        
+        guard let image = self.imageView.image else { return }
+        
+        Filters.blackwhite(image) { (theImage) in
+            self.imageView.image = theImage
+        }
+    }
+    
+    @IBAction func saveButtonSelected(sender: AnyObject) {
+        
+        guard let image = self.imageView.image else { return }
+        
+        API.shared.write(Post(image: image)) { (success) in
+            if success {
+                print("Yahoo!")
+            }
+        }
+    }
+    
     
     //MARK: UIImagePickerControllerDelegate
     

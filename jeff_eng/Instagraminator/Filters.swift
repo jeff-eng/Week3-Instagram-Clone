@@ -53,7 +53,11 @@ class Filters {
         self.filter("CIPhotoEffectTransfer", image: image, completion: completion)
     }
     
-    //Another filter
+    class func sepia(image: UIImage, completion: FiltersCompletion) {
+        self.filter("CISepiaTone", image: image, completion: completion)
+    }
     
-    //Another filter
+    class func vignette(image: UIImage, completion: FiltersCompletion) {
+        self.filter("CIVignetteEffect", image: image, completion: completion)
+    }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2016 Jeffrey Eng. All rights reserved.
 //
 
-import Foundation
 import CloudKit
 
 typealias APICompletion = (success: Bool) -> ()
